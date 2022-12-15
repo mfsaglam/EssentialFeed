@@ -32,7 +32,6 @@ public final class RemoteFeedLoader {
             } else {
                 completion(.invalidData)
             }
-            
         }
     }
 }
