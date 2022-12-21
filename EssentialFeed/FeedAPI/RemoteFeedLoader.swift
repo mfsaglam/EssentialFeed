@@ -50,19 +50,19 @@ public final class RemoteFeedLoader {
             }
         }
     }
+}
+
+public struct Root: Decodable {
+    let items: [Item]
+}
+
+struct Item: Decodable {
+    let id: UUID
+    let description: String?
+    let location: String?
+    let image: String
     
-    public struct Root: Decodable {
-        let items: [Item]
-    }
-    
-    struct Item: Decodable {
-        let id: UUID
-        let description: String?
-        let location: String?
-        let image: String
-        
-        var item: FeedItem {
-            return FeedItem(id: id, description: description, location: location, imageURL: URL(string: image)!)
-        }
+    var item: FeedItem {
+        return FeedItem(id: id, description: description, location: location, imageURL: URL(string: image)!)
     }
 }
