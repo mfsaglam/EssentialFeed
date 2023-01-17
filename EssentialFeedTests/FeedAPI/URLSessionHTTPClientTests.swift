@@ -67,7 +67,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.data, data)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
-        
     }
     
     ///204 No Content response scenario
@@ -81,7 +80,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.data, emptyData)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
-        
     }
     
     //MARK: - Helpers
@@ -91,11 +89,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         trackForMemoryLeak(sut, file: file, line: line)
         return sut
     }
-    
-    private func anyURL() -> URL {
-        return URL(string: "http://www.a-url.com")!
-    }
-    
     
     private func nonHTTPUrlResponse() -> URLResponse {
         return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
@@ -108,12 +101,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     private func anyData() -> Data {
         return Data.init("any data".utf8)
     }
-    
-    private func anyNSError() -> NSError {
-        NSError(domain: "any error", code: 0)
-    }
 
-    
     private func resultErrorFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> Error? {
         let result = resultFor(data: data, response: response, error: error)
         
@@ -208,9 +196,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
             
             client?.urlProtocolDidFinishLoading(self)
         }
-        
         override func stopLoading() {}
-        
     }
-    
 }

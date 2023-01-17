@@ -156,10 +156,8 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
             }
-            
             expectation.fulfill()
         }
-        
         action()
         
         wait(for: [expectation], timeout: 1.0)
