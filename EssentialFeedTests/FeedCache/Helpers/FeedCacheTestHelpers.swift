@@ -18,7 +18,6 @@ func uniqueImageFeed() -> (model: [FeedImage], local: [LocalFeedImage]) {
     return (model: feed, local: localFeed)
 }
 
-
 extension Date {
     
     func minusFeedMaxAge() -> Date {

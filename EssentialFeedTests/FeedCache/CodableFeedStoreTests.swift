@@ -11,15 +11,38 @@ import EssentialFeed
 class CodableFeedStore {
     
     private struct Cache: Codable {
-        let images: [LocalFeedImage]
+        let images: [CodableFeedImage]
         let timestamp: Date
+        
+        var localFeed: [LocalFeedImage] {
+            return images.map { $0.local }
+        }
+    }
+    
+    private struct CodableFeedImage: Codable {
+        private let id: UUID
+        private let description: String?
+        private let location: String?
+        private let url: URL
+        
+        init(_ image: LocalFeedImage) {
+            self.id = image.id
+            self.description = image.description
+            self.location = image.location
+            self.url = image.url
+        }
+        
+        var local: LocalFeedImage {
+            LocalFeedImage(id: self.id, description: self.description, location: self.location, url: self.url)
+        }
     }
     
     let storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
     
     func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping FeedStore.InsertionCompletion) {
         let encoder = JSONEncoder()
-        let encodedFeed = try! encoder.encode(Cache(images: feed, timestamp: timestamp))
+        let cache = Cache(images: feed.map(CodableFeedImage.init), timestamp: timestamp)
+        let encodedFeed = try! encoder.encode(cache)
         try! encodedFeed.write(to: storeUrl)
         completion(nil)
     }
@@ -31,22 +54,24 @@ class CodableFeedStore {
         
         let decoder = JSONDecoder()
         let cache = try! decoder.decode(Cache.self, from: data)
-        completion(.found(feed: cache.images, timestamp: cache.timestamp))
+        completion(.found(feed: cache.localFeed, timestamp: cache.timestamp))
     }
 }
 
 final class CodableFeedStoreTests: XCTestCase {
         
-    override class func setUp() {
+    override func setUp() {
         super.setUp()
+        
         let storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
         try? FileManager.default.removeItem(at: storeUrl)
     }
     
-    override class func tearDown() {
+    override func tearDown() {
         super.tearDown()
+        
         let storeUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
-        try! FileManager.default.removeItem(at: storeUrl)
+        try? FileManager.default.removeItem(at: storeUrl)
     }
     
     func test_retrieve_deliversEmptyOnEmptyCache() {
