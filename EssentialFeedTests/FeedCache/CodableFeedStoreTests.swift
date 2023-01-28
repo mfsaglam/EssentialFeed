@@ -173,8 +173,8 @@ final class CodableFeedStoreTests: XCTestCase {
     }
     
     @discardableResult
-    private func deleteCache(from sut: FeedStore) -> Error? {
-        let exp = expectation(description: "wait for insertion")
+    private func deleteCache(from sut: FeedStore, file: StaticString = #file, line: UInt = #line) -> Error? {
+        let exp = expectation(description: "wait for deletion")
         var deletionError: Error?
         sut.deleteCachedFeed { receivedDeletionError in
             deletionError = receivedDeletionError
