@@ -18,15 +18,16 @@ class CoreDataFeedStore: FeedStore {
     }
     
     func retrieve(completion: @escaping RetrievalCompletion) {
-        
+        completion(.empty)
     }
-    
-    
 }
 
 class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     
     func test_retrieve_deliversEmptyOnEmptyCache() {
+        let sut = makeSUT()
+        
+        assertThateRetrieveDeliversEmptyOnEmptyCache(on: sut)
         
     }
     
@@ -56,5 +57,13 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     
     func test_storeSideEffects_runSerially() {
 
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CoreDataFeedStore {
+        let sut = CoreDataFeedStore.init()
+        trackForMemoryLeak(sut, file: file, line: line)
+        return sut
     }
 }
