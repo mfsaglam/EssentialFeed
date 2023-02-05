@@ -67,7 +67,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.data, data)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
-        
     }
     
     ///204 No Content response scenario
@@ -81,7 +80,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedValues?.data, emptyData)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
-        
     }
     
     //MARK: - Helpers
@@ -91,11 +89,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         trackForMemoryLeak(sut, file: file, line: line)
         return sut
     }
-    
-    private func anyURL() -> URL {
-        return URL(string: "http://www.a-url.com")!
-    }
-    
     
     private func nonHTTPUrlResponse() -> URLResponse {
         return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
@@ -108,12 +101,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     private func anyData() -> Data {
         return Data.init("any data".utf8)
     }
-    
-    private func anyNSError() -> NSError {
-        NSError(domain: "any error", code: 0)
-    }
 
-    
     private func resultErrorFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> Error? {
         let result = resultFor(data: data, response: response, error: error)
         
@@ -130,7 +118,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         let result = resultFor(data: data, response: response, error: error)
                 
         switch result {
-        case let .success(receivedData, receivedResponse):
+        case let .success((receivedData, receivedResponse)):
             return (receivedData, receivedResponse)
         default:
             XCTFail("Expected success, got \(result) instead.", file: file, line: line)
@@ -138,9 +126,9 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
-    private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> HTTPClientResult {
+    private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {
         URLProtocolStub.stub(data: data, response: response, error: error)
-        var capturedResult: HTTPClientResult!
+        var capturedResult: HTTPClient.Result!
     
         let exp = expectation(description: "Wait for completion")
 
@@ -208,9 +196,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
             
             client?.urlProtocolDidFinishLoading(self)
         }
-        
         override func stopLoading() {}
-        
     }
-    
 }
