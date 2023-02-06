@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1247A4802991570600C98E0C /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247A47F2991570600C98E0C /* FeedImageViewModel+PrototypeData.swift */; };
+		1247A4822991589200C98E0C /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247A4812991589200C98E0C /* FeedImageCell.swift */; };
 		12C713C7298FD409006FA42C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C713C6298FD409006FA42C /* AppDelegate.swift */; };
 		12C713C9298FD409006FA42C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C713C8298FD409006FA42C /* SceneDelegate.swift */; };
 		12C713CE298FD409006FA42C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C713CC298FD409006FA42C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1247A47F2991570600C98E0C /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
+		1247A4812991589200C98E0C /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		12C713C3298FD409006FA42C /* Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C713C6298FD409006FA42C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12C713C8298FD409006FA42C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				12C713D4298FD40A006FA42C /* Info.plist */,
 				12C713F6298FDF5B006FA42C /* FeedViewController.swift */,
 				1247A47F2991570600C98E0C /* FeedImageViewModel+PrototypeData.swift */,
+				1247A4812991589200C98E0C /* FeedImageCell.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				12C713F7298FDF5B006FA42C /* FeedViewController.swift in Sources */,
 				1247A4802991570600C98E0C /* FeedImageViewModel+PrototypeData.swift in Sources */,
 				12C713C9298FD409006FA42C /* SceneDelegate.swift in Sources */,
+				1247A4822991589200C98E0C /* FeedImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
