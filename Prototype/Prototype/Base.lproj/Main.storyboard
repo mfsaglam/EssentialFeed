@@ -120,6 +120,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Feed" id="IPx-SQ-f1o"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="sVR-So-85E">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="ieY-qW-55R" eventType="valueChanged" id="e6M-fY-B07"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joF-9Q-1tT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
