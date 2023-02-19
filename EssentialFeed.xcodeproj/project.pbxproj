@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1220AB7D29A233F200E7F83E /* FeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */; };
 		122BE0A1296ABC0000543592 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BE0A0296ABC0000543592 /* RemoteFeedItem.swift */; };
 		122BE0A3296ABC6400543592 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BE0A2296ABC6400543592 /* LocalFeedImage.swift */; };
 		12325B352989906800D7154B /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12325B342989906800D7154B /* FeedStoreSpecs.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRefreshViewController.swift; sourceTree = "<group>"; };
 		122BE0A0296ABC0000543592 /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		122BE0A2296ABC6400543592 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		12325B342989906800D7154B /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				12FFA5202998052300B66A67 /* FeedViewController.swift */,
+				1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12361E3D299F7024003F7586 /* FeedImageDataLoader.swift in Sources */,
+				1220AB7D29A233F200E7F83E /* FeedRefreshViewController.swift in Sources */,
 				12454854299BCFAD00FB378F /* UIView+Shimmering.swift in Sources */,
 				12FFA5212998052300B66A67 /* FeedViewController.swift in Sources */,
 				127499EE2998EACC002ABD47 /* FeedImageCell.swift in Sources */,
