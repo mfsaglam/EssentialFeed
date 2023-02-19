@@ -206,6 +206,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1220AB7829A22D1000E7F83E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1220AB7A29A22D3B00E7F83E /* Helpers */,
+				12FFA5162997B25D00B66A67 /* FeedViewControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1220AB7929A22D2300E7F83E /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				1220AB7829A22D1000E7F83E /* Controllers */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
+		1220AB7A29A22D3B00E7F83E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1220AB7B29A22D4500E7F83E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		12361E38299F6FA0003F7586 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,7 +450,8 @@
 		12F3CEF82994342100ACFB72 /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				12FFA5162997B25D00B66A67 /* FeedViewControllerTests.swift */,
+				1220AB7B29A22D4500E7F83E /* Helpers */,
+				1220AB7929A22D2300E7F83E /* Feed UI */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
