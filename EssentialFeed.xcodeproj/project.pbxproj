@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12097CB829A555D100977A8A /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12097CB729A555D100977A8A /* FeedUIComposer.swift */; };
 		1220AB7D29A233F200E7F83E /* FeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */; };
 		122BE0A1296ABC0000543592 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BE0A0296ABC0000543592 /* RemoteFeedItem.swift */; };
 		122BE0A3296ABC6400543592 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BE0A2296ABC6400543592 /* LocalFeedImage.swift */; };
@@ -112,6 +113,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12097CB729A555D100977A8A /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
 		1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRefreshViewController.swift; sourceTree = "<group>"; };
 		122BE0A0296ABC0000543592 /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		122BE0A2296ABC6400543592 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12097CB629A555B800977A8A /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				12097CB729A555D100977A8A /* FeedUIComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
 		1220AB7829A22D1000E7F83E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +273,7 @@
 		12361E3A299F6FC3003F7586 /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
+				12097CB629A555B800977A8A /* Composers */,
 				12361E38299F6FA0003F7586 /* Controllers */,
 				12361E39299F6FAF003F7586 /* Views */,
 			);
@@ -776,6 +787,7 @@
 				12FFA5212998052300B66A67 /* FeedViewController.swift in Sources */,
 				127499EE2998EACC002ABD47 /* FeedImageCell.swift in Sources */,
 				12B5D07129A3A1E200E4B2CF /* FeedImageCellController.swift in Sources */,
+				12097CB829A555D100977A8A /* FeedUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
