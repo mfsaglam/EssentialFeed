@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12097CB829A555D100977A8A /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12097CB729A555D100977A8A /* FeedUIComposer.swift */; };
+		121E44FD29B12DB500144E46 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121E44FC29B12DB500144E46 /* FeedPresenter.swift */; };
 		1220AB7D29A233F200E7F83E /* FeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */; };
 		122BE0A1296ABC0000543592 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BE0A0296ABC0000543592 /* RemoteFeedItem.swift */; };
 		122BE0A3296ABC6400543592 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BE0A2296ABC6400543592 /* LocalFeedImage.swift */; };
@@ -116,6 +117,7 @@
 
 /* Begin PBXFileReference section */
 		12097CB729A555D100977A8A /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
+		121E44FC29B12DB500144E46 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		1220AB7C29A233F200E7F83E /* FeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRefreshViewController.swift; sourceTree = "<group>"; };
 		122BE0A0296ABC0000543592 /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		122BE0A2296ABC6400543592 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				127AF86729AA5BAE00CC8E5A /* FeedViewModel.swift */,
 				12EEE5FE29AD0DCF0013314C /* FeedImageViewModel.swift */,
+				121E44FC29B12DB500144E46 /* FeedPresenter.swift */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121E44FD29B12DB500144E46 /* FeedPresenter.swift in Sources */,
 				12361E3D299F7024003F7586 /* FeedImageDataLoader.swift in Sources */,
 				1220AB7D29A233F200E7F83E /* FeedRefreshViewController.swift in Sources */,
 				12454854299BCFAD00FB378F /* UIView+Shimmering.swift in Sources */,
