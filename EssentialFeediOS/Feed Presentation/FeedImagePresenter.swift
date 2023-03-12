@@ -24,11 +24,13 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
     }
 
     func didStartLoadingImageData(for model: FeedImage) {
-        let viewModel = FeedImageViewModel<Image>(description: model.description,
-                                                  location: model.location,
-                                                  image: nil,
-                                                  isLoading: true,
-                                                  shouldRetry: false)
+        let viewModel = FeedImageViewModel<Image>(
+            description: model.description,
+            location: model.location,
+            image: nil,
+            isLoading: true,
+            shouldRetry: false
+        )
         self.view.display(viewModel)
     }
 
@@ -40,20 +42,24 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
             return self.didFinishLoadingImageData(with: InvalidImageDataError(), for: model)
         }
 
-        let viewModel = FeedImageViewModel(description: model.description,
-                                                   location: model.location,
-                                                   image: image,
-                                                   isLoading: false,
-                                                   shouldRetry: false)
+        let viewModel = FeedImageViewModel(
+            description: model.description,
+            location: model.location,
+            image: image,
+            isLoading: false,
+            shouldRetry: false
+        )
         self.view.display(viewModel)
     }
 
     func didFinishLoadingImageData(with error: Error, for model: FeedImage) {
-        let viewModel = FeedImageViewModel<Image>(description: model.description,
-                                                  location: model.location,
-                                                  image: nil,
-                                                  isLoading: false,
-                                                  shouldRetry: true)
+        let viewModel = FeedImageViewModel<Image>(
+            description: model.description,
+            location: model.location,
+            image: nil,
+            isLoading: false,
+            shouldRetry: true
+        )
         self.view.display(viewModel)
     }
 }
