@@ -5,7 +5,7 @@
 //  Created by Fatih Sağlam on 28.03.2023.
 //
 
-import Foundation
+import UIKit
 import EssentialFeediOS
 
 extension FeedImageCell {
@@ -35,5 +35,15 @@ extension FeedImageCell {
     
     var renderedImage: Data! {
         return feedImageView.image?.pngData()!
+    }
+}
+
+private extension UIButton {
+    func simulateTap() {
+        allTargets.forEach { target in
+            actions(forTarget: target, forControlEvent: .touchUpInside)?.forEach {
+                (target as NSObject).perform(Selector($0))
+            }
+        }
     }
 }
