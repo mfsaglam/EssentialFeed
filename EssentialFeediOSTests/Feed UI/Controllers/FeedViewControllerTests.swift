@@ -281,20 +281,6 @@ final class FeedViewControllerTests: XCTestCase {
         }
     }
     
-    private func assertThat(_ sut: FeedViewController, hasConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) {
-        let view = sut.feedImageView(at: index)
-        
-        guard let cell = view as? FeedImageCell else {
-            return XCTFail("Expected \(FeedImageCell.self) instance, got \(String(describing: view)) instead.", file: file, line: line)
-        }
-        
-        let shouldLocationBeVisible = (image.location != nil)
-        
-        XCTAssertEqual(cell.isShowingLocation, shouldLocationBeVisible, "Expected `isShowingLocation` to be \(shouldLocationBeVisible) for imageView at index \(index)", file: file,line: line)
-        XCTAssertEqual(cell.locationText, image.location, "Expected location text to be \(String(describing: image.location)) for image view at index \(index)", file: file, line: line)
-        XCTAssertEqual(cell.descriptionText, image.description, "Expected description text to be \(String(describing: image.description)) for image view at index \(index)", file: file, line: line)
-    }
-    
     private func makeImage(description: String? = nil, location: String? = nil, url: URL = URL(string: "https://a-url.com")!) -> FeedImage {
         FeedImage(id: UUID(), description: description, location: location, url: url)
     }
@@ -304,7 +290,7 @@ final class FeedViewControllerTests: XCTestCase {
     }    
 }
 
-private extension FeedViewController {
+extension FeedViewController {
     func simulateUserInitiatedFeedReload() {
         refreshControl?.simulatePullToRefresh()
     }
@@ -357,7 +343,7 @@ private extension FeedViewController {
     }
 }
 
-private extension FeedImageCell {
+extension FeedImageCell {
     func simulateRetryAction() {
         feedImageRetryButton.simulateTap()
     }
@@ -387,7 +373,7 @@ private extension FeedImageCell {
     }
 }
 
-private extension UIButton {
+extension UIButton {
     func simulateTap() {
         allTargets.forEach { target in
             actions(forTarget: target, forControlEvent: .touchUpInside)?.forEach {
@@ -397,7 +383,7 @@ private extension UIButton {
     }
 }
 
-private extension UIRefreshControl {
+extension UIRefreshControl {
     func simulatePullToRefresh() {
         allTargets.forEach { target in
             actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
@@ -407,7 +393,7 @@ private extension UIRefreshControl {
     }
 }
 
-private extension UIImage {
+extension UIImage {
     static func make(withColor color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
