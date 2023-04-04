@@ -51,6 +51,15 @@ final class FeedPresenter {
         self.errorView = errorView
     }
     
+    static var title: String {
+        NSLocalizedString(
+            "feed_view_title",
+            tableName: "Feed",
+            bundle: Bundle(for: FeedPresenter.self),
+            comment: "Title for the feed view"
+        )
+    }
+    
     private var feedLoadError: String {
         NSLocalizedString(
             "feed_view_connection_error",
@@ -78,6 +87,9 @@ final class FeedPresenter {
 
 class FeedPresenterTests: XCTestCase {
     
+    func test_title_isLocalized() {
+        XCTAssertEqual(FeedPresenter.title, localized("feed_view_title"))
+    }
     func test_init_doesNotSendMessagesToView() {
         let (_, view) = makeSUT()
                 
