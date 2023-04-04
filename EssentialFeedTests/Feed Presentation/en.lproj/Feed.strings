@@ -1,0 +1,10 @@
+/* 
+  Feed.strings
+  EssentialFeed
+
+  Created by Fatih Sağlam on 4.04.2023.
+  
+*/
+
+"feed_view_title" = "My Feed";
+"feed_view_connection_error" = "Couldn't connect to server.";
