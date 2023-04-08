@@ -81,7 +81,7 @@ class FeedImagePresenterTests: XCTestCase {
     private class ViewSpy: FeedImageView {
         typealias Image = FeedImage
                 
-        enum Message: Equatable {
+        enum Message: Hashable {
             case display(
                 description: String?,
                 location: String?,
@@ -91,10 +91,10 @@ class FeedImagePresenterTests: XCTestCase {
             )
         }
         
-        private(set) var messages = [Message]()
+        private(set) var messages = Set<Message>()
         
         func display(_ viewModel: FeedImageViewModel<EssentialFeed.FeedImage>) {
-            messages.append(.display(
+            messages.insert(.display(
                 description: viewModel.description,
                 location: viewModel.location,
                 image: viewModel.image,
